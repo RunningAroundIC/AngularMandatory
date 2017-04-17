@@ -1,0 +1,8 @@
+<h3 class="title">Popular Movies</h3>
+<div *ngFor="let movie of movies" class="col-sm-6" id="poster">
+    <!--{{movie.title}}<br>-->
+      <img class="visible-xs hidden-sm hidden-md visible-lg" src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}">
+      <img class="hidden-xs visible-sm  visible-md hidden-lg" src="https://image.tmdb.org/t/p/w185/{{movie.poster_path}}">
+</div>
+
+

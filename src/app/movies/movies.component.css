@@ -1,0 +1,31 @@
+#poster
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.title
+{
+    font-family: 'Ubuntu', sans-serif;
+    padding-left: 15px;
+}
+
+@media only screen and (max-width : 1199px)
+{
+    #poster
+    {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        height: 287px;
+    }
+}
+
+@media only screen and (max-width : 767px)
+{
+    #poster
+    {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        height: 513px;
+    }
+}

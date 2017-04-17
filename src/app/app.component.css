@@ -1,0 +1,17 @@
+main
+{
+    min-height: 100%;
+}
+
+nav
+{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#navTitle
+{
+    position: static;
+    padding: 15px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
