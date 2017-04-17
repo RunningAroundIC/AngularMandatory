@@ -1,3 +1,17 @@
-<p>
-  tv-series works!
-</p>
+<div class="container-float">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 id="header">Search Series</h1>
+      </div>
+      <div class="col-sm-12">
+        <form id="search">
+          <input #searchTherm type="text" name="search" placeholder="Search..">
+          <button (click)="search(searchTherm.value)">Go</button>
+        </form>
+      </div>
+      <div *ngFor="let serie of series" class="col-sm-3" id="searchResult">
+          <img class="visible-xs hidden-sm hidden-md visible-lg" src="https://image.tmdb.org/t/p/w342/{{serie.poster_path}}">
+          <img class="hidden-xs visible-sm  visible-md hidden-lg" src="https://image.tmdb.org/t/p/w185/{{serie.poster_path}}">
+      </div>
+    </div>
+</div>

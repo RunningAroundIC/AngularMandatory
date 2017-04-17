@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { MoviesService } from '../movies.service';
 import { IMovies } from '../imovies';
@@ -11,12 +11,19 @@ import { IMovies } from '../imovies';
 })
 export class MovieComponent implements OnInit {
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private service: MoviesService) 
+  private movies: IMovies[];
+
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private service: MoviesService) { }
+
+ search(term:string)
+ {
+   this.service.searchResult = term;
+   this.service.searchMovie().subscribe(response => {this.movies = response; console.log(response)});
+ }
+
+  ngOnInit() 
   {
     
-  }
-
-  ngOnInit() {
   }
 
 }

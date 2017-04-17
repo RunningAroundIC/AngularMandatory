@@ -5,10 +5,14 @@
       </div>
       <div class="col-sm-12">
         <form id="search">
-          <input type="text" name="search" placeholder="Search..">
+          <input #searchTherm type="text" name="search" placeholder="Search..">
+          <button (click)="search(searchTherm.value)">Go</button>
         </form>
       </div>
-      <div class="col-sm-12"></div>
+      <div *ngFor="let movie of movies" class="col-sm-3" id="searchResult">
+          <img class="visible-xs hidden-sm hidden-md visible-lg" src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}">
+          <img class="hidden-xs visible-sm  visible-md hidden-lg" src="https://image.tmdb.org/t/p/w185/{{movie.poster_path}}">
+      </div>
     </div>
 </div>
 

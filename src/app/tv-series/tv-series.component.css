@@ -1,0 +1,81 @@
+#header
+{
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#search
+{
+    text-align: center;
+}
+
+input[type=text]
+{
+    width: 150px;
+    box-sizing: border-box;
+    border: 2px solid #c8c8c8;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: white;
+    background-image: url('images/search.png');
+    background-position: 15px 15px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    
+}
+
+input[type=text]:focus
+{
+    width: 50%;
+}
+
+button
+{
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    border: 2px solid #c8c8c8;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Ubuntu', sans-serif;
+    color:white;
+    background-color: #697075;
+}
+
+.container-float
+{
+    padding-left: 15px;
+    text-align: center;
+}
+
+#searchResult
+{
+    
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 513px;
+}
+
+@media only screen and (max-width : 1199px)
+{
+    #searchResult
+    {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        height: 287px;
+    }
+}
+
+@media only screen and (max-width : 767px)
+{
+    #searchResult
+    {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        height: 513px;
+    }
+
+}

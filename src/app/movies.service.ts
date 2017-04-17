@@ -13,6 +13,8 @@ export class MoviesService
 
   private baseUrl: string = "https://api.themoviedb.org/3/";
   private urlEnding: string = "?api_key=500895670e01e2d2df5b9d53e46ec86b&language=en-US";
+  private searchEnding: string = "&query=";
+  public searchResult;
 
   constructor(private http:Http) 
   { 
@@ -27,8 +29,8 @@ export class MoviesService
 
   public searchMovie(): Observable<IMovies[]>
   {
-    var url = this.getMovie("/search/movie");
-    return this.http.get(url).map(responce => responce.json().results)
+    var url = this.getMovie("search/movie");
+    return this.http.get(url).map(response => response.json().results)
   }
 
   //Sammensætter url til getMovies.
@@ -39,7 +41,7 @@ export class MoviesService
   //Sammensætter url til searchMovie.
   private getMovie(path : string) : string
   {
-    return this.baseUrl+path+this.urlEnding;
+    return this.baseUrl+path+this.urlEnding+this.searchEnding+this.searchResult;
   }
 
 }
