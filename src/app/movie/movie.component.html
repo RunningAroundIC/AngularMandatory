@@ -1,18 +1,31 @@
-<div class="container-float">
+<div class="container-float" id="containerTop">
     <div class="row">
-      <div class="col-sm-12">
-        <h1 id="header">Search Movies</h1>
-      </div>
-      <div class="col-sm-12">
-        <form id="search">
-          <input #searchTherm type="text" name="search" placeholder="Search..">
-          <button (click)="search(searchTherm.value)">Go</button>
-        </form>
-      </div>
-      <div *ngFor="let movie of movies" class="col-sm-3" id="searchResult">
-          <img class="visible-xs hidden-sm hidden-md visible-lg" src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}">
-          <img class="hidden-xs visible-sm  visible-md hidden-lg" src="https://image.tmdb.org/t/p/w185/{{movie.poster_path}}">
-      </div>
+        <div class="col-sm-12">
+            <h1 id="header">Search Movies</h1>
+        </div>
+        <div class="col-sm-12">
+            <form id="search">
+              <input #searchTherm type="text" name="search" placeholder="Search..">
+              <button (click)="search(searchTherm.value)">Go</button>
+            </form>
+        </div>
     </div>
 </div>
+<div class="container-float" id="containerBottom">
+    <div class="row">
+        <div class="col-sm-3" id="searchResult" *ngFor="let movie of movies" (click)="onSelect(movie)" >
+            <img class="visible-xs hidden-sm hidden-md visible-lg" src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}">
+            <img class="hidden-xs visible-sm  visible-md hidden-lg" src="https://image.tmdb.org/t/p/w185/{{movie.poster_path}}">
 
+            <!--<div *ngIf="selectedMovie === movie">
+              <p>{{movie.title}}</p>
+              <p>{{movie.release_date}}</p>
+            </div>
+            chiled routing: https://angular-2-training-book.rangle.io/handout/routing/child_routes.html
+
+            -->
+            
+        </div>
+        
+    </div>
+</div>

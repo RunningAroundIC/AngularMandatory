@@ -12,6 +12,7 @@ import { IMovies } from '../imovies';
 export class MovieComponent implements OnInit {
 
   private movies: IMovies[];
+  private selectedMovie: IMovies;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private service: MoviesService) { }
 
@@ -21,9 +22,14 @@ export class MovieComponent implements OnInit {
    this.service.searchMovie().subscribe(response => {this.movies = response; console.log(response)});
  }
 
-  ngOnInit() 
+  ngOnInit() {}
+
+  //Når der klikkes på objektet bliver det kun selected den ene gang. SE:http://jilles.me/ng-click-and-ng-if-in-angular2/
+  public onSelect = (movie : IMovies) =>
   {
-    
+    if (this.selectedMovie === movie) return;
+    this.selectedMovie = movie;
+    console.log(movie)
   }
 
 }

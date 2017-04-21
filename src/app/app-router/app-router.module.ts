@@ -6,7 +6,12 @@ import { HomeComponent } from '../home/home.component';
 import { MovieComponent } from '../movie/movie.component';
 import { TvSeriesComponent } from '../tv-series/tv-series.component';
 
-const appRoutes: Routes = [{path:'home', component: HomeComponent},{path:'movies', component: MovieComponent},{path:'series', component: TvSeriesComponent} ,{path: '', redirectTo: '/home', pathMatch: 'full'},{path: '**', component: HomeComponent}]
+const appRoutes: Routes = [
+  {path:'home', component: HomeComponent},
+  {path:'movies', component: MovieComponent},
+  {path:'series', component: TvSeriesComponent} ,
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: '**', component: HomeComponent}]
 
 
 @NgModule({

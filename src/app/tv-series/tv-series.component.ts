@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { TvShowsService } from '../tv-shows.service';
 import { ITvShows } from '../itv-shows';
@@ -9,7 +9,8 @@ import { ITvShows } from '../itv-shows';
   styleUrls: ['./tv-series.component.css'],
   providers: [TvShowsService]
 })
-export class TvSeriesComponent implements OnInit {
+export class TvSeriesComponent implements OnInit 
+{
 
    private series: ITvShows[];
 
@@ -21,7 +22,9 @@ export class TvSeriesComponent implements OnInit {
      this.service.searchTvShows().subscribe(response => {this.series = response; console.log(response)});
    }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+
   }
 
 }
