@@ -1,0 +1,31 @@
+<img id="backgroundImage" src="https://image.tmdb.org/t/p/original/{{movie?.backdrop_path}}">
+
+<div class="container-float" id="movieInfoContainer" *ngIf="movie?.title">
+    <div id="row" class="row">
+        <div class="col-sm-12" >
+            <h2 id="headline">{{headline}}</h2>
+            <h4 id="tagline">{{movie?.tagline}}</h4>
+            <h4 id="release">Release date: {{movie?.release_date}}</h4> 
+        </div>
+        <div class="col-sm-5" id="image">
+          <img class="visible-xs visible-sm visible-md visible-lg" src="https://image.tmdb.org/t/p/w342/{{movie?.poster_path}}">
+          <img class="hidden-xs hidden-sm  hidden-md hidden-lg" src="https://image.tmdb.org/t/p/w185/{{movie?.poster_path}}">
+        </div>
+        <div class="col-sm-7" id="overview">
+            <h5>Overview:</h5>
+            <p>{{movie?.overview}}</p>
+            <h5>Genre:</h5>
+            <p *ngFor="let genre of movie?.genres">{{genre.name}} </p>
+            <h5>Runtime:</h5>
+            <p>{{movie?.runtime}} min.</p>
+            <h5>Video:</h5>
+            <p>{{movie?.video}}</p>
+            <h5>Homepage:</h5>
+            <a href="{{movie?.homepage}}">{{movie?.homepage}}</a>
+        </div>
+        <div class="col-sm-12">
+          <button id="backbutton" (click)="goBackToMovies()">Go Back</button>
+        </div>
+        
+    </div>
+</div>

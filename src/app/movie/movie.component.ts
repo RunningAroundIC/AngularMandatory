@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { MoviesService } from '../movies.service';
 import { IMovies } from '../imovies';
@@ -9,10 +9,11 @@ import { IMovies } from '../imovies';
   styleUrls: ['./movie.component.css'],
   providers: [MoviesService]
 })
-export class MovieComponent implements OnInit {
+export class MovieComponent implements OnInit { 
+
 
   private movies: IMovies[];
-  private selectedMovie: IMovies;
+  public selectedMovie: IMovies;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private service: MoviesService) { }
 
@@ -29,7 +30,9 @@ export class MovieComponent implements OnInit {
   {
     if (this.selectedMovie === movie) return;
     this.selectedMovie = movie;
-    console.log(movie)
+    this.router.navigate(['movies/movie-details', movie.title, movie.id])
+    //console.log(movie)
   }
+  
 
 }

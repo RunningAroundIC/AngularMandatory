@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -11,6 +11,7 @@ import { MovieComponent } from './movie/movie.component';
 
 import { AppRouterModule } from './app-router/app-router.module';
 import { TvSeriesComponent } from './tv-series/tv-series.component';
+import { MovieDetailsComponent } from './movie/movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +20,13 @@ import { TvSeriesComponent } from './tv-series/tv-series.component';
     SeriesComponent,
     HomeComponent,
     MovieComponent,
-    TvSeriesComponent
+    TvSeriesComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     AppRouterModule
   ],
