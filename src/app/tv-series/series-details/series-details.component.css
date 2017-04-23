@@ -51,6 +51,19 @@
        1px 1px 0 #000;
 }
 
+#lastAir
+{
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    font-weight: bold;
+    text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+}
+
 #image
 {
     width: 350px;
@@ -75,6 +88,16 @@
 {
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
+}
+
+#numberOfSeasons h5
+{
+    display: inline;
+}
+
+#numberOfEpisodes h5
+{
+    display: inline;
 }
 
 #similarMovies

@@ -12,6 +12,7 @@ import { MovieComponent } from './movie/movie.component';
 import { AppRouterModule } from './app-router/app-router.module';
 import { TvSeriesComponent } from './tv-series/tv-series.component';
 import { MovieDetailsComponent } from './movie/movie-details/movie-details.component';
+import { SeriesDetailsComponent } from './tv-series/series-details/series-details.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MovieDetailsComponent } from './movie/movie-details/movie-details.compo
     HomeComponent,
     MovieComponent,
     TvSeriesComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    SeriesDetailsComponent
   ],
   imports: [
     BrowserModule,

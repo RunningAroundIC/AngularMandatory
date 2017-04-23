@@ -9,6 +9,11 @@
     text-align: center;
 }
 
+img:hover
+{
+    cursor: pointer;
+}
+
 input[type=text]
 {
     width: 150px;

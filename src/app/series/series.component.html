@@ -1,5 +1,5 @@
 <h3 class="title">Popular Series</h3>
-<div *ngFor="let serie of series" class="col-sm-6" id="poster">
+<div *ngFor="let serie of series" class="col-sm-6" id="poster" (click)="onSelect(serie)">
     <!--{{movie.title}}<br>-->
       <img class="visible-xs hidden-sm hidden-md visible-lg" src="https://image.tmdb.org/t/p/w342/{{serie.poster_path}}">
       <img class="hidden-xs visible-sm  visible-md hidden-lg" src="https://image.tmdb.org/t/p/w185/{{serie.poster_path}}">

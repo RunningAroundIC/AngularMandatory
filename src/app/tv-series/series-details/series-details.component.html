@@ -1,0 +1,49 @@
+<header id="headerImage">
+    <img  src="https://image.tmdb.org/t/p/original/{{serie?.backdrop_path}}">
+</header>
+
+<div class="container" id="movieInfoContainer" *ngIf="serie?.name">
+    <div class="row">
+        <div class="col-sm-12" >
+            <h2 id="headline">{{serie?.name}}</h2>
+            <h4 id="release">First air date: {{serie?.first_air_date}}</h4>
+            <h4 id="lastAir">Last air date: {{serie?.last_air_date}}</h4>
+        </div>
+        <div class="col-sm-4" id="image">
+          <img class="hidden-xs" src="https://image.tmdb.org/t/p/w342/{{serie?.poster_path}}">
+        </div>
+        <div class="col-sm-4" id="overview">
+            <h5>Overview:</h5>
+            <p>{{serie?.overview}}</p>
+            <h5>Genre:</h5>
+            <p *ngFor="let genre of serie?.genres">{{genre.name}} </p>
+            <h5>Runtime(s):</h5>
+            <p *ngFor="let time of serie?.episode_run_time">{{time}} min.</p>
+
+            <div id="numberOfSeasons">
+                <h5>Number of seasons: </h5>
+                <span>{{serie?.number_of_seasons}}</span>
+            </div>
+            <div id="numberOfEpisodes">
+                <h5>Number of episodes: </h5>
+                <span>{{serie?.number_of_episodes}}</span>
+            </div>
+            
+            
+            <h5>Homepage:</h5>
+            <a href="{{serie?.homepage}}">{{serie?.homepage}}</a>
+        </div>
+        <div class="col-sm-4"  id="similarMovies">
+            <h5 (click)="back()">{{headline}}</h5>
+            <h6>Similar Series:</h6>
+            <div *ngFor="let series of similarSeries" (click)="onSelect(series)">
+                <a>{{series.name}}</a>
+            </div>
+            
+        </div>
+        <div class="col-sm-12">
+          <button id="backbutton" (click)="goBackToSeries()">Go Back</button>
+        </div>
+    </div>
+</div>
+

@@ -10,6 +10,11 @@
     padding-left: 15px;
 }
 
+img:hover
+{
+    cursor: pointer;
+}
+
 @media only screen and (max-width : 1199px)
 {
     #poster

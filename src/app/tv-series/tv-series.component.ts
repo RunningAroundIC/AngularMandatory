@@ -13,6 +13,7 @@ export class TvSeriesComponent implements OnInit
 {
 
    private series: ITvShows[];
+   public selectedSeries: ITvShows;
 
    constructor(private router: Router, private activatedRoute: ActivatedRoute, private service: TvShowsService) { }
 
@@ -22,9 +23,15 @@ export class TvSeriesComponent implements OnInit
      this.service.searchTvShows().subscribe(response => {this.series = response; console.log(response)});
    }
 
-  ngOnInit() 
-  {
+  ngOnInit() {}
 
+  //Når der klikkes på objektet bliver det kun selected den ene gang. SE:http://jilles.me/ng-click-and-ng-if-in-angular2/
+  public onSelect = (serie : ITvShows) =>
+  {
+    if (this.selectedSeries === serie) return;
+    this.selectedSeries = serie;
+    this.router.navigate(['series/series-details', serie.name, serie.id])
+    //console.log(movie)
   }
 
 }
